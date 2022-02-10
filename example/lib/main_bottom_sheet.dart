@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                formKey.currentState.validate();
+                formKey.currentState?.validate();
               },
               child: Text('Validate'),
             ),
