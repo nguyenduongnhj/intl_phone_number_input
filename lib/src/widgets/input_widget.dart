@@ -286,7 +286,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
   InputDecoration getInputDecoration(InputDecoration? decoration) {
     InputDecoration value = decoration ??
         InputDecoration(
-          border: widget.inputBorder ?? UnderlineInputBorder(),
+          border: widget.inputBorder ?? InputBorder.none,
           hintText: widget.hintText,
         );
 
@@ -392,6 +392,9 @@ class _InputWidgetView
 
   Widget _buildBody() {
     return Container(
+      decoration: BoxDecoration(
+          border: Border.all(color: Color(0xFF1BC5AC)),
+          borderRadius: BorderRadius.all(Radius.circular(10))),
       child: Row(
         children: <Widget>[
           if (!widget.selectorConfig.setSelectorButtonAsPrefixIcon) ...[
@@ -416,6 +419,12 @@ class _InputWidgetView
             ),
             SizedBox(width: widget.spaceBetweenSelectorAndTextField),
           ],
+          Container(
+            decoration: BoxDecoration(color: Color(0xFFCDD4DB)),
+            width: 1,
+            height: state.selectorButtonBottomPadding - 20,
+            alignment: Alignment.center,
+          ),
           _buildTextBox(),
         ],
       ),
