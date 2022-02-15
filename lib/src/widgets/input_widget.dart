@@ -392,6 +392,7 @@ class _InputWidgetView
 
   Widget _buildBody() {
     return Container(
+      height: 52,
       decoration: BoxDecoration(
           border: Border.all(color: Color(0xFF1BC5AC)),
           borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -417,13 +418,14 @@ class _InputWidgetView
                 ),
               ],
             ),
-            SizedBox(width: widget.spaceBetweenSelectorAndTextField),
+            SizedBox(width: widget.spaceBetweenSelectorAndTextField - 10),
           ],
           Container(
             decoration: BoxDecoration(color: Color(0xFFCDD4DB)),
             width: 1,
-            height: state.selectorButtonBottomPadding - 20,
+            height: 30,
             alignment: Alignment.center,
+            margin: EdgeInsets.only(right: 12),
           ),
           _buildTextBox(),
         ],
